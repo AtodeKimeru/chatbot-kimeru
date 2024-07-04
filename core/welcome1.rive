@@ -1,0 +1,95 @@
++ hola
+- ¡Hola y bienvenido a Kimeru! 🌱📲 \n \n
+^ Kimeru es tu herramienta para determinar precios de productos agrícolas y conectar con compradores interesados. \n \n
+^ ¿Cómo puedo ayudarte hoy? Aquí tienes algunas opciones para comenzar: \n
+^ 1. 📝 **Registrar** mis productos y ubicación. \n
+^ 2. 📈 **Consultar** los precios de productos agrícolas. \n
+^ 3. 📅 **Suscribirme** al boletín semanal de precios. \n
+^ 4. ℹ️ Obtener **acompañamiento** sobre el uso de la plataforma. \n
+^ 5. 📞 **Contactar** con soporte. \n \n
+^ Por favor, responde con el número o la palabra clave de la opción que deseas.
+
+
+! var registrar = Perfecto, vamos a registrar tus productos y ubicación. \n 
+^ Por favor, responde con el nombre de los productos que cultivas, separados por comas.
+
+! var consultar = Para proporcionarte los precios actualizados, por favor responde con el nombre del producto del que quieres conocer el precio.
+
+! var suscribirme = Para suscribirte a nuestro boletín semanal, necesitamos confirmar tu registro. \n
+^ ¿Estás registrado en nuestra plataforma? (Sí/No)
+
+! var acompañamiento = Aquí tienes algunas opciones de acompañamiento sobre el uso de Kimeru: \n
+^ 1. ℹ️ **Cómo** registrar tus productos y ubicación.  \n
+^ 2. 📈 **Cómo** consultar los precios de productos. \n
+^ 3. 📅 **Cómo** suscribirte y gestionar el boletín semanal. \n
+^ 4. 🛠️ **Funciones** adicionales de Kimeru. \n \n
+^ Por favor, responde con el número o la palabra clave de la opción que deseas.
+
+
+! var contactar = Para contactar con soporte, por favor escribe tu consulta o problema, y uno de nuestros representantes se pondrá en contacto contigo lo antes posible. \n 
+^ o escribe al correo kimeru4all@gmail.com con el ausunto **soporte* 
+
+
+! var ubicacion = Gracias. Ahora, por favor indícame tu ubicación, escribe tu departamente (puedes escribir también el nombre de tu municipio).
+
+! var domingo = Los domingo esta cerrado
+
+! var horario = Lunes abrimos de 08:00 a 18:00\n
+^ Martes abrimos de 08:00 a 18:00\n
+^ Miercoles abrimos de 08:00 a 18:00\n
+^ Jueves abrimos de 08:00 a 18:00\n
+^ Viernes abrimos de 08:00 a 18:00\n
+^ Sabados abrimos de 08:00 a 12:00\n
+^ Domingos Cerrado\n
+
++ [*] registrar{weight=2} [*]
+- <bot registrar>
+
++ [*] martes{weight=2} [*]
+- <bot martes>
+
++ [*] miercoles{weight=2} [*]
+- <bot miercoles>
+
++ [*] jueves{weight=2} [*]
+- <bot jueves>
+
++ [*] viernes{weight=2} [*]
+- <bot viernes>
+
++ [*] sabado{weight=2} [*]
+- <bot sabado>
+
++ [*] domingo{weight=2} [*]
+- <bot domingo>
+
+
++ [*] (menu|carta) [*]
+- <bot lunes> \n <bot martes> \n <bot miercoles> \n <bot jueves> \n <bot viernes> \n <bot sabado> \n <bot domingo>
+
++ como estas
+@ hola
+
++ hay alguien*
+@ hola
+
++ [*] (telefono|celular|cel) [*]
+- Nuestro telefono es 725648221
+
++ [*] (direccion|ubicacion|lugar) [*]
+- Nuestra direccion Colonia Emiliano Zapata Acapulco Gro
+- Nos encontramos ubicados en la Colonia Emiliano Zapata Acapulco Gro
+
++ [*] (entregas|a domicilio) [*]
+- Realizamos entregas a domicilio solo de lunes a viernes de 12:00 a 15:00
+
++ [*] (pagina web|web|pagina) [*]
+- Visitanos en https://www.programadornovato.com
+
++ [*] (hora|horarios|dias|abierto){weight=3} [*]
+- <bot horario>
+
+
++ *
+- Recuerda que soy un robot, me podrías preguntar de otra forma
+- Intenta hacer tu pregunta de otra manera.
